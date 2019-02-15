@@ -1,5 +1,5 @@
 provider "vsphere" {
-  user                 = "${var.vsphere_user}"
+  user                 = "${var.vsphere_username}"
   password             = "${var.vsphere_password}"
   vsphere_server       = "${var.vsphere_server}"
   allow_unverified_ssl = true
@@ -10,7 +10,7 @@ module "vm" {
 
   vsphere_datacenter      = "${var.vsphere_datacenter}"
   vsphere_datastore       = "${var.vsphere_datastore}"
-  vsphere_compute_cluster = "${var.vsphere_compute_cluster}"
+  vsphere_cluster         = "${var.vsphere_cluster}"
   vsphere_network         = "${var.vsphere_network}"
   vsphere_folder          = "${var.vsphere_folder}"
 

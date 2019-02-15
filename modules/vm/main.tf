@@ -8,7 +8,7 @@ data "vsphere_datastore" "datastore" {
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "${var.vsphere_compute_cluster}"
+  name          = "${var.vsphere_cluster}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
@@ -25,13 +25,13 @@ data "vsphere_virtual_machine" "template" {
 resource "vsphere_virtual_machine" "node" {
 
   name               = "${var.hostname}"
-  # folder             = "${var.vsphere_folder}"
+  folder             = "${var.vsphere_folder}"
   resource_pool_id   = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
   datastore_id       = "${data.vsphere_datastore.datastore.id}"
 
   num_cpus           = "${var.node_num_cpus}"
   memory             = "${var.node_memory}"
-  guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
+  guest_id           = "${data.vsphere_virtual_machine.template.guest_id}"
 
   network_interface {
       network_id = "${data.vsphere_network.network.id}"

@@ -6,7 +6,7 @@ variable "vsphere_datastore" {
   description = "vSphere datastore to use"
 }
 
-variable "vsphere_compute_cluster" {
+variable "vsphere_cluster" {
   description = "vSphere compute cluster to use"
 }
 
@@ -40,5 +40,4 @@ variable "root_volume_size" {
 
 variable "disk_template" {
   description = "vSphere template to use as a disk template"
-  default = "CentOS_Template_Packer"
 }

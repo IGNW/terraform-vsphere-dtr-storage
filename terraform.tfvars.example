@@ -1,0 +1,16 @@
+vsphere_server = "172.20.1.5"
+vsphere_username = "administrator@vsphere.local"
+vsphere_datacenter = "pod1-hx-dc"
+vsphere_datastore = "Primary"
+vsphere_compute_cluster = "pod1-hx"
+vsphere_network = "vm-network-40"
+hostname = "dtr-storage"
+domain = "ignw.io"
+ipv4_address = "172.20.4.99"
+ipv4_netmask = "24"
+ipv4_gateway = "172.20.4.1"
+dhcp_server = "8.8.8.8"
+num_cpus = 2
+memory_mb = 4000
+root_volume_size = 50
+disk_template = "ubuntu1604_template_packer"
